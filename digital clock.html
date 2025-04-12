@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock with Date</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('wp2952139-anime-wallpaper-hd-1080p.jpg') no-repeat center fixed;
+            background-size: cover;
+            color: #61dafb;
+            text-align: center;
+        }
+        .clock {
+            font-size: 300px;
+            font-weight: bold;
+           text-decoration: doubleline;
+            text-shadow: 2px 2px 4px rgba(247, 22, 22, 0.5);
+            margin-bottom: 20px;
+            
+        }
+        .date {
+            font-size: 270px;
+            margin-top: 10px;
+            text-decoration: doubleline;
+            text-shadow: 2px 2px 4px rgba(247, 22, 22, 0.5);
+            margin-bottom: 20px;
+            color: #61dafb;
+          
+        }
+    </style>
+</head>
+<body>
+    <div class="clock" id="clock"></div>
+    <div class="date" id="date"></div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+            const year = now.getFullYear();
+
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('date').textContent = `${day}-${month}-${year}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call to display clock and date immediately
+    </script>
+</body>
+</html>

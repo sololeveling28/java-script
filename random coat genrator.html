@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background: url(lone-tree.jpg);
+            color: white;
+        }
+        #image-container {
+            position: relative;
+            margin : 900px auto;
+            margin-left: 300px;
+            width: 2500px; 
+            height: 2500px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #090a0a;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            
+        }
+        button {
+           
+            position: absolute;
+            bottom: 10%; 
+            left: 50%;
+            transform: translate(-50%, 0);
+            padding: 10px 20px;
+            font-size: 100px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            background: url("Old Paper Crack Amazing HD Wallpaper.jpg") no-repeat center center fixed;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 300px;">Random Image Generator</h1>
+    <div id="image-container">
+        <img id="random-image" src="wp2899436-wallpaper-anime-full-hd.jpg" alt="Click the button to generate an image!" />
+        <button onclick="generateImage()">Generate Image</button>
+    </div>
+
+    <script>
+        const images = [
+            "pexels-gabriel-peter-219375-719396.jpg",
+            "pexels-lusaya-401107.jpg",
+            "pexels-pixabay-33045.jpg",
+            "pexels-pixabay-326055.jpg",
+            "wp5432875-attack-on-titans-anime-wallpapers.png",
+            "wp2899436-wallpaper-anime-full-hd.jpg",
+            "concept-art-sunset-city.jpg",
+        ];
+
+        function generateImage() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            document.getElementById('random-image').src = images[randomIndex];
+        }
+    </script>
+</body>
+</html>
